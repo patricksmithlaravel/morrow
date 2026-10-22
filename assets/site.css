@@ -403,21 +403,21 @@ a:hover { text-decoration-thickness: 3px; }
   .arc-toggle { display: block; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .arc-pause { display: inline-flex; }
   .arc-caps { max-width: 40rem; grid-template-columns: minmax(0, 1fr); gap: 0; text-align: center; }
-  .arc-cap { grid-area: 1 / 1; animation: arc-cap 16s linear infinite; }
-  .arc-pop { animation: arc-pop 16s linear infinite; }
-  .arc-stn { animation: arc-stn 16s linear infinite; }
-  .arc-lbl { animation: arc-lbl 16s linear infinite; }
-  .arc-stage .k2 { animation-delay: -12s; }
-  .arc-stage .k3 { animation-delay: -8s; }
-  .arc-stage .k4 { animation-delay: -4s; }
-  .arc-mo { animation: arc-orbit 16s linear infinite, arc-mo-fade 16s linear infinite; }
-  .arc-mo-body { animation: arc-counter 16s linear infinite; }
-  .arc-pose-sleep { animation: arc-pose-sleep 16s linear infinite; }
-  .arc-pose-tea { animation: arc-pose-tea 16s linear infinite; }
-  .arc-pose-wave { animation: arc-pose-wave 16s linear infinite; }
-  .arc-scr-1 { animation: arc-scr-1 16s linear infinite; }
-  .arc-scr-2 { animation: arc-scr-2 16s linear infinite; }
-  .arc-scr-3 { animation: arc-scr-3 16s linear infinite; }
+  .arc-cap { grid-area: 1 / 1; animation: arc-cap 8s linear infinite; }
+  .arc-pop { animation: arc-pop 8s linear infinite; }
+  .arc-stn { animation: arc-stn 8s linear infinite; }
+  .arc-lbl { animation: arc-lbl 8s linear infinite; }
+  .arc-stage .k2 { animation-delay: -6s; }
+  .arc-stage .k3 { animation-delay: -4s; }
+  .arc-stage .k4 { animation-delay: -2s; }
+  .arc-mo { animation: arc-orbit 8s linear infinite, arc-mo-fade 8s linear infinite; }
+  .arc-mo-body { animation: arc-counter 8s linear infinite; }
+  .arc-pose-sleep { animation: arc-pose-sleep 8s linear infinite; }
+  .arc-pose-tea { animation: arc-pose-tea 8s linear infinite; }
+  .arc-pose-wave { animation: arc-pose-wave 8s linear infinite; }
+  .arc-scr-1 { animation: arc-scr-1 8s linear infinite; }
+  .arc-scr-2 { animation: arc-scr-2 8s linear infinite; }
+  .arc-scr-3 { animation: arc-scr-3 8s linear infinite; }
   .arc-stage:hover *, #arc-pause:checked ~ .arc-stage * { animation-play-state: paused; }
   #arc-pause:checked ~ .arc-stage .arc-pause { background: var(--sun); color: var(--night); border-color: var(--sun); }
   #arc-pause:focus-visible ~ .arc-stage .arc-pause { outline: 3px solid var(--focus); outline-offset: 3px; }
@@ -827,46 +827,51 @@ thead th { color: var(--text-2); font-size: 0.875rem; }
 
 /* Scroll-linked motion: one moment per section, played as it scrolls into view and reversed
    on the way back up. Only where scroll timelines exist and reduced motion is not requested;
-   everywhere else every element is already in its final place. Each starts visible. */
+   everywhere else every element is already in its final place. The ranges play while the
+   section is well inside the window, and each one ends before the page runs out of scroll. */
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     /* It learns: the Insights phone rises like the hero's, its disc grows, the numbers get underlined. */
     .learn-art { view-timeline: --learn-art block; }
-    .phone-learn { animation: rise-in var(--ease-out) both; animation-timeline: --learn-art; animation-range: entry 0% cover 40%; }
-    .learn-art::before { animation: disc-in var(--ease-out) both; animation-timeline: --learn-art; animation-range: entry 10% cover 45%; }
+    .phone-learn { animation: rise-in var(--ease-out) both; animation-timeline: --learn-art; animation-range: entry 40% cover 55%; }
+    .learn-art::before { animation: disc-in var(--ease-out) both; animation-timeline: --learn-art; animation-range: entry 40% cover 60%; }
     .learn-copy .learn-rule { view-timeline: --learn-rule block; }
-    .learn-rule strong { animation: underline-in var(--ease-out) both; animation-timeline: --learn-rule; animation-range: entry 60% cover 55%; }
+    .learn-rule strong { animation: underline-in var(--ease-out) both; animation-timeline: --learn-rule; animation-range: entry 100% cover 60%; }
 
-    /* Meet Mo: the three poses rise from behind their sunrise line, one after another. */
+    /* Meet Mo: the three poses hop up from behind their sunrise line, one after another. */
     .mo2-set { overflow: hidden; view-timeline: --mo-set block; }
-    .mo2-set img { animation: mo-rise var(--ease-out) both; animation-timeline: --mo-set; }
-    .mo2-sleep { animation-range: entry 30% cover 40%; }
-    .mo2-tea { animation-range: entry 50% cover 48%; }
-    .mo2-wave { animation-range: entry 70% cover 56%; }
+    .mo2-set img { animation: mo-rise linear both; animation-timeline: --mo-set; }
+    .mo2-set .mo2-sleep { animation-range: cover 10% cover 40%; }
+    .mo2-set .mo2-tea { animation-range: cover 18% cover 52%; }
+    .mo2-set .mo2-wave { animation-range: cover 26% cover 62%; }
 
-    /* Morrow Plus: the receipt prints out downward and settles into its tilt. */
-    .plus3-sheet { animation: print-out var(--ease-out) both; animation-timeline: view(block); animation-range: entry 0% cover 45%; }
+    /* Morrow Plus: the receipt prints out downward from a thin strip and settles into its tilt. */
+    .plus3-sheet { animation: print-out var(--ease-out) both; animation-timeline: view(block); animation-range: entry 10% cover 50%; }
 
-    /* Privacy: the sun rule draws across, then the three facts settle in. */
+    /* Privacy: the sun rule draws across, then the three facts slide up into place. */
     .facts { view-timeline: --facts block; }
-    .facts div:first-child::before { animation: rule-draw var(--ease-out) both; animation-timeline: --facts; animation-range: entry 20% cover 30%; }
+    .facts div:first-child::before { animation: rule-draw var(--ease-out) both; animation-timeline: --facts; animation-range: entry 60% cover 38%; }
     .facts div { animation: settle var(--ease-out) both; animation-timeline: --facts; }
-    .facts div:nth-child(1) { animation-range: entry 20% cover 32%; }
-    .facts div:nth-child(2) { animation-range: entry 40% cover 38%; }
-    .facts div:nth-child(3) { animation-range: entry 60% cover 44%; }
+    .facts div:nth-child(1) { animation-range: entry 60% cover 40%; }
+    .facts div:nth-child(2) { animation-range: entry 90% cover 45%; }
+    .facts div:nth-child(3) { animation-range: entry 100% cover 50%; }
   }
 }
-@keyframes rise-in { from { opacity: 0.4; transform: translateY(48px); } to { opacity: 1; transform: none; } }
-@keyframes disc-in { from { transform: scale(0.82); } to { transform: none; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(140px) scale(0.92); } to { opacity: 1; transform: none; } }
+@keyframes disc-in { from { opacity: 0; transform: scale(0.35); } to { opacity: 1; transform: none; } }
 @keyframes underline-in { from { background-size: 0% 3px; } to { background-size: 100% 3px; } }
-@keyframes mo-rise { from { transform: translateY(62%); } to { transform: none; } }
+@keyframes mo-rise {
+  0% { transform: translateY(105%); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+  70% { transform: translateY(-9%); animation-timing-function: ease-in-out; }
+  100% { transform: none; }
+}
 @keyframes print-out {
-  from { clip-path: inset(-80px -80px 58% -80px); transform: translateY(-20px) rotate(0deg); }
+  from { clip-path: inset(-80px -80px 96% -80px); transform: translateY(-80px) rotate(-2deg); }
   to { clip-path: inset(-80px); transform: rotate(1deg); }
 }
-@keyframes rule-draw { from { transform: scaleX(0.06); } to { transform: none; } }
-@keyframes settle { from { opacity: 0.35; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes rule-draw { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes settle { from { opacity: 0; transform: translateY(56px); } to { opacity: 1; transform: none; } }
 
 @media print {
   .site-header, .site-footer, .skip, .toc, .topics, .horizon { display: none; }
