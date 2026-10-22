@@ -362,13 +362,6 @@ a:hover { text-decoration-thickness: 3px; }
 }
 .split .copy p { margin-top: 14px; color: var(--text-2); max-width: var(--measure); }
 .split .copy h2 + p { margin-top: 16px; }
-.mo-figure {
-  justify-self: center;
-  background: var(--bg-card);
-  border-radius: 50%;
-  padding: 28px;
-  width: min(300px, 80vw);
-}
 
 .tiers {
   margin-top: 32px;
