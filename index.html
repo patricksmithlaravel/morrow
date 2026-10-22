@@ -59,37 +59,66 @@
       <h2 id="how-title">How a morning goes</h2>
       <p class="intro">For anyone whose morning "takes 30 minutes" and actually takes 50. Morrow times the real thing and plans around it.</p>
     </div>
-    <ol class="bento">
-      <li class="tile tile-tonight">
-        <div class="visual">
-          <p class="statement"><span>Leave at 8:15.</span> <span>Wake at <em>7:18.</em></span></p>
+    <input class="arc-toggle" type="checkbox" id="arc-pause">
+    <div class="arc-stage">
+      <label class="arc-pause" for="arc-pause"><span class="arc-pause-icon" aria-hidden="true"></span>Pause animation</label>
+      <div class="arc-box">
+        <div class="arc-clip" aria-hidden="true"><div class="arc-line"></div></div>
+        <div class="arc-phone-clip">
+          <figure class="phone arc-phone">
+            <div class="arc-screens">
+              <img class="arc-scr arc-scr-1" src="assets/screen-tomorrow.webp" alt="Morrow's Tomorrow screen: leave by 8:15, alarm at 7:18, 4 minutes earlier than yesterday because breakfast has been running long." width="660" height="1434" loading="lazy" decoding="async">
+              <img class="arc-scr arc-scr-2" src="assets/screen-running.webp" alt="A morning in progress: Get dressed, 4:12 left, on track to be out the door at 8:13." width="660" height="1434" loading="lazy" decoding="async">
+              <img class="arc-scr arc-scr-3" src="assets/screen-receipt.webp" alt="A morning receipt: each step and its time, left at 8:10, on time." width="660" height="1434" loading="lazy" decoding="async">
+            </div>
+          </figure>
         </div>
-        <h3>Set your leave time tonight</h3>
-        <p>Morrow takes your routine and a 5-minute buffer away from it and shows the wake-up time, with the reason in one line.</p>
-      </li>
-      <li class="tile tile-alarm">
-        <div class="visual">
-          <p class="statement">“Snooze 9&nbsp;· no&nbsp;coffee”</p>
+        <div class="arc-horizon" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <span class="arc-stn arc-stn-1" aria-hidden="true"></span>
+        <span class="arc-stn arc-stn-2 k2" aria-hidden="true"></span>
+        <span class="arc-stn arc-stn-3 k3" aria-hidden="true"></span>
+        <span class="arc-stn arc-stn-4 k4" aria-hidden="true"></span>
+        <span class="arc-lbl arc-lbl-1" aria-hidden="true">Set your leave time tonight</span>
+        <span class="arc-lbl arc-lbl-2 k2" aria-hidden="true">The alarm rings</span>
+        <span class="arc-lbl arc-lbl-3 k3" aria-hidden="true">One step at a time</span>
+        <span class="arc-lbl arc-lbl-4 k4" aria-hidden="true">Out the door, or at your desk</span>
+        <div class="arc-mo" aria-hidden="true">
+          <div class="arc-mo-arm">
+            <div class="arc-mo-body">
+              <img class="arc-pose arc-pose-sleep" src="assets/mo-sleep.svg" alt="" width="200" height="200" loading="lazy" decoding="async">
+              <img class="arc-pose arc-pose-tea" src="assets/mo-tea.svg" alt="" width="200" height="200" loading="lazy" decoding="async">
+              <img class="arc-pose arc-pose-wave" src="assets/mo-wave.svg" alt="" width="200" height="200" loading="lazy" decoding="async">
+            </div>
+          </div>
         </div>
-        <h3>The alarm rings</h3>
-        <p>Morrow sets a system alarm on your iPhone. The snooze button says what a snooze costs.</p>
-      </li>
-      <li class="tile tile-steps">
-        <h3>One step at a time</h3>
-        <p>Each step counts down on the Lock Screen and in the Dynamic Island, with a line that says if you're on track, behind or ahead. Turn on Voice cues in Morrow's Settings and it says each step out loud, so you don't have to watch the screen.</p>
-        <figure class="phone tile-phone">
-          <img src="assets/screen-running.webp" alt="A morning in progress: Get dressed, 4:12 left, on track to be out the door at 8:13." width="660" height="1434" loading="lazy" decoding="async">
-        </figure>
-        <img class="live" src="assets/live-activity.webp" alt="Morrow's Live Activity, showing the current step's countdown and whether you're on track." width="688" height="312" loading="lazy" decoding="async">
-      </li>
-      <li class="tile tile-door">
-        <h3>Out the door, or at your desk</h3>
-        <p>The last step is a door check for keys, wallet, or whatever you tend to forget. If you work from home, the Work from home routine plans back from when work starts and ends with a desk check: laptop, charger, water, today's calendar. Then a receipt shows each step and when you finished.</p>
-        <figure class="phone tile-phone">
-          <img src="assets/screen-receipt.webp" alt="A morning receipt: each step and its time, left at 8:10, on time." width="660" height="1434" loading="lazy" decoding="async">
-        </figure>
-      </li>
-    </ol>
+        <div class="arc-pop arc-pop-1">
+          <img src="assets/screen-tomorrow.webp" alt="The alarm card: 7:18, set by Morrow, 4 minutes earlier than yesterday because breakfast has been running long." width="660" height="1434" loading="lazy" decoding="async">
+        </div>
+        <p class="arc-pop arc-pop-2 k2">Snooze 9&nbsp;· no&nbsp;coffee</p>
+        <img class="arc-pop arc-pop-3 k3" src="assets/live-activity.webp" alt="Morrow's Live Activity, showing the current step's countdown and whether you're on track." width="688" height="312" loading="lazy" decoding="async">
+        <div class="arc-pop arc-pop-4 k4">
+          <img src="assets/screen-receipt.webp" alt="The receipt totals: 52:50 total, left at 8:10, on time, bonus 4 minutes." width="660" height="1434" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <ol class="arc-caps">
+        <li class="arc-cap arc-cap-1">
+          <h3>Set your leave time tonight</h3>
+          <p>Morrow takes your routine and a 5-minute buffer away from it and shows the wake-up time, with the reason in one line.</p>
+        </li>
+        <li class="arc-cap arc-cap-2 k2">
+          <h3>The alarm rings</h3>
+          <p>Morrow sets a system alarm on your iPhone. The snooze button says what a snooze costs.</p>
+        </li>
+        <li class="arc-cap arc-cap-3 k3">
+          <h3>One step at a time</h3>
+          <p>Each step counts down on the Lock Screen and in the Dynamic Island, with a line that says if you're on track, behind or ahead. Turn on Voice cues in Morrow's Settings and it says each step out loud, so you don't have to watch the screen.</p>
+        </li>
+        <li class="arc-cap arc-cap-4 k4">
+          <h3>Out the door, or at your desk</h3>
+          <p>The last step is a door check for keys, wallet, or whatever you tend to forget. If you work from home, the Work from home routine plans back from when work starts and ends with a desk check: laptop, charger, water, today's calendar. Then a receipt shows each step and when you finished.</p>
+        </li>
+      </ol>
+    </div>
   </section>
 
   <section class="section" aria-labelledby="learn-title">
@@ -108,78 +137,69 @@
     </div>
   </section>
 
-  <section class="section mo" aria-labelledby="mo-title">
-    <h2 id="mo-title">Meet Mo</h2>
-    <p>Mo is a small sun who gets ready with you. Mo brushes when you brush, puts on a scarf when you get dressed and waves when you leave. Miss a morning and Mo just slept in.</p>
-    <p>You pick a goal of 3 to 5 weekdays. One bad morning doesn't reset anything, and reaching the goal earns Mo something new to wear.</p>
-    <div class="mo-row">
-      <img src="assets/mo-tea.svg" alt="Mo holding a cup of tea" width="150" height="150" loading="lazy" decoding="async">
-      <img class="mo-main" src="assets/mo-wave.svg" alt="Mo in a blue scarf, waving goodbye" width="230" height="230" loading="lazy" decoding="async">
-      <img src="assets/mo-sleep.svg" alt="Mo asleep in a nightcap" width="150" height="150" loading="lazy" decoding="async">
+  <section class="section" aria-labelledby="mo-title">
+    <div class="mo2-grid">
+      <div class="mo2-copy">
+        <h2 id="mo-title">Meet Mo</h2>
+        <p>Mo is a small sun who gets ready with you. Mo brushes when you brush, puts on a scarf when you get dressed and waves when you leave. Miss a morning and Mo just slept in.</p>
+        <p>You pick a goal of 3 to 5 weekdays. One bad morning doesn't reset anything, and reaching the goal earns Mo something new to wear.</p>
+      </div>
+      <div class="mo2-art">
+        <div class="mo2-set">
+          <img class="mo2-sleep" src="assets/mo-sleep.svg" alt="Mo asleep in a nightcap" width="200" height="200" loading="lazy" decoding="async">
+          <img class="mo2-tea" src="assets/mo-tea.svg" alt="Mo holding a cup of tea" width="200" height="200" loading="lazy" decoding="async">
+          <img class="mo2-wave" src="assets/mo-wave.svg" alt="Mo in a blue scarf, waving goodbye" width="200" height="200" loading="lazy" decoding="async">
+        </div>
+        <div class="mo2-horizon" aria-hidden="true"></div>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="price-title">
-    <div class="section-head">
-      <h2 id="price-title">Morrow Plus</h2>
-      <p class="intro">Morrow needs a Morrow Plus subscription. It's one subscription with everything in it.</p>
-    </div>
-    <div class="plans">
-      <div class="plan plan-yearly">
-        <h3>Yearly</h3>
-        <p class="price"><span class="num">$39.99</span> a year</p>
-        <p class="trial">14-day free trial</p>
-      </div>
-      <div class="plan">
-        <h3>Monthly</h3>
-        <p class="price"><span class="num">$9.99</span> a month</p>
-        <p>No trial. Switch to yearly any time.</p>
-      </div>
-    </div>
-    <div class="plus-cta">
-      <a class="button" href="https://apps.apple.com/app/id6824169059">Get Morrow on the App Store</a>
-    </div>
-
-    <div class="included">
-      <h3>Everything in Morrow</h3>
-      <div class="groups">
-        <div class="group">
-          <h4>Your mornings</h4>
-          <ul>
-            <li>Morrow sets the alarm for you every night, from your real times</li>
-            <li>Lock Screen and Dynamic Island pacing, haptics, and spoken cues if you turn them on</li>
-            <li>One-tap trimming when you fall behind, and "I'll be late"</li>
-            <li>Mo, and extra wardrobe sets for Mo</li>
-          </ul>
-        </div>
-        <div class="group">
-          <h4>Your plan</h4>
-          <ul>
-            <li>Starter routines for weekdays, students, commuters, work from home, gym days and weekends, plus an evening wind-down</li>
-            <li>Leave time from tomorrow's first calendar event, with travel time</li>
-            <li>Insights, your full history and the weekly recap</li>
-          </ul>
-        </div>
-        <div class="group">
-          <h4>Outside the app</h4>
-          <ul>
-            <li>Home Screen and Lock Screen widgets, Siri and Shortcuts</li>
-            <li>The Apple Watch app (watchOS 26 or later)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="how">
-      <h3>How the subscription works</h3>
-      <div>
+  <section class="section" aria-labelledby="plus-title">
+    <div class="plus3-grid">
+      <div class="plus3-sheet">
+        <h2 id="plus-title">Morrow Plus</h2>
+        <div class="plus3-ramp" aria-hidden="true"></div>
         <ul>
+          <li class="plus3-line"><span class="plus3-name">Yearly</span><span class="plus3-lead" aria-hidden="true"></span><span class="plus3-val">$39.99 a year</span></li>
+          <li class="plus3-trial"><span class="plus3-pill">14-day free trial</span></li>
+          <li class="plus3-line"><span class="plus3-name">Monthly</span><span class="plus3-lead" aria-hidden="true"></span><span class="plus3-val">$9.99 a month</span></li>
+          <li class="plus3-note">No trial. Switch to yearly any time.</li>
+        </ul>
+        <hr class="plus3-perf">
+        <h3>Everything in Morrow</h3>
+        <p class="plus3-group">Your mornings</p>
+        <ul class="plus3-feat">
+          <li>Morrow sets the alarm for you every night, from your real times</li>
+          <li>Lock Screen and Dynamic Island pacing, haptics, and spoken cues if you turn them on</li>
+          <li>One-tap trimming when you fall behind, and "I'll be late"</li>
+          <li>Mo, and extra wardrobe sets for Mo</li>
+        </ul>
+        <p class="plus3-group">Your plan</p>
+        <ul class="plus3-feat">
+          <li>Starter routines for weekdays, students, commuters, work from home, gym days and weekends, plus an evening wind-down</li>
+          <li>Leave time from tomorrow's first calendar event, with travel time</li>
+          <li>Insights, your full history and the weekly recap</li>
+        </ul>
+        <p class="plus3-group">Outside the app</p>
+        <ul class="plus3-feat">
+          <li>Home Screen and Lock Screen widgets, Siri and Shortcuts</li>
+          <li>The Apple Watch app (watchOS 26 or later)</li>
+        </ul>
+      </div>
+      <div class="plus3-copy">
+        <p class="plus3-intro">Morrow needs a Morrow Plus subscription. It's one subscription with everything in it.</p>
+        <div class="plus3-cta">
+          <a class="button" href="https://apps.apple.com/app/id6824169059">Get Morrow on the App Store</a>
+        </div>
+        <h3>How the subscription works</h3>
+        <ul class="plus3-sub">
           <li>Set up your first routine and see your alarm, then choose a plan.</li>
           <li>Cancel or switch plans any time in your Apple Account settings.</li>
           <li>If your subscription ends, Morrow stops setting alarms and asks you to subscribe again. Your routines and history stay saved on your iPhone.</li>
           <li>On a new iPhone, Restore Purchases brings your subscription back.</li>
         </ul>
-        <p class="fine">Prices are in US dollars; the App Store shows the price for your country. Payment is charged to your Apple Account. Morrow Plus renews automatically unless you cancel at least 24 hours before the end of the current period. The free trial becomes a yearly subscription unless you cancel at least 24 hours before it ends.</p>
+        <p class="plus3-fine">Prices are in US dollars; the App Store shows the price for your country. Payment is charged to your Apple Account. Morrow Plus renews automatically unless you cancel at least 24 hours before the end of the current period. The free trial becomes a yearly subscription unless you cancel at least 24 hours before it ends.</p>
       </div>
     </div>
   </section>
