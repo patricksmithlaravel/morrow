@@ -309,6 +309,8 @@ a:hover { text-decoration-thickness: 3px; }
   margin: 0 auto;
   padding: clamp(72px, 9vw, 128px) var(--gutter) 0;
 }
+/* Morrow Plus sits 1.5 times further from Meet Mo, so the receipt has room above its torn edge. */
+.section-plus { padding-top: clamp(108px, 13.5vw, 192px); }
 .section-head { max-width: 40rem; }
 .intro { margin-top: 18px; font-size: 1.1875rem; color: var(--text-2); }
 
